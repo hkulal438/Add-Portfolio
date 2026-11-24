@@ -2,15 +2,16 @@
 
 /* ------------------------------------------------------------------
    Type system
-   Display: Michroma — wide, engineered caps. Used sparingly and always
-            tracked out, like lettering on a hull.
-   Text:    Manrope.
-   Mono:    IBM Plex Mono for telemetry: coordinates, clocks, labels.
+   One family, Montserrat, at three jobs:
+   Display: headings and big numbers, bold.
+   Text:    body copy, regular.
+   Mono:    small uppercase labels, semibold (the token name is kept so
+            the components didn't need touching).
    ------------------------------------------------------------------ */
 @theme {
-  --font-display: "Michroma", "Eurostile", "Arial Black", sans-serif;
-  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --font-display: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --color-void: #05070c;
   --color-void-2: #0b0f18;
@@ -76,6 +77,15 @@
 }
 
 @layer utilities {
+  /* Everything is Montserrat; weight does the work the separate display
+     and label fonts used to: bold headings, semibold small-caps labels. */
+  .font-display {
+    font-weight: 700;
+  }
+  .font-mono {
+    font-weight: 600;
+  }
+
   .h-screen-s {
     height: 100svh;
   }
